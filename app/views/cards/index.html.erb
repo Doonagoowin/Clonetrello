@@ -1,0 +1,8 @@
+<h1>View Cards</h1>
+
+<% @cards.each do |card| %>
+    <%= link_to 'Show Card', card_path(card) %>
+    <%= link_to 'New Card', new_card_path %>
+    <%= link_to 'Edit Card', edit_card_path(card) %>
+    <%= link_to 'Delete Card', card, method: :delete %>
+<% end %>
