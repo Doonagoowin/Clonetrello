@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_03_08_024045) do
+>>>>>>> 4ac5ade4c5099179130097f3eac1f74a3693cfd2
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+
+  create_table "cards", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "comment"
+  end
   create_table "boards", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
