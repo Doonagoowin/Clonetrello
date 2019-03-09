@@ -10,25 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_03_08_024045) do
->>>>>>> 4ac5ade4c5099179130097f3eac1f74a3693cfd2
+ActiveRecord::Schema.define(version: 2019_03_08_023737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
-  create_table "cards", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.string "comment"
-  end
   create_table "boards", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.bigint "user_id"
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_boards_on_user_id"
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lists", force: :cascade do |t|
